@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy New Year Vibha ✨</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 350px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.hint {
+  margin-top: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.heart {
+  font-size: 32px;
+  margin-top: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+  </style>
+</head>
+<body>  <div class="card" onclick="nextMessage()">
+    <h1 id="title">Hey Vibha 👋</h1>
+    <p id="message">Someone wanted you to start this year with a smile 😊</p>
+    <div class="heart" id="heart" style="display:none;">💖</div>
+    <div class="hint" id="hint">(tap/click anywhere)</div>
+  </div>  <script>
+    const messages = [
+      {
+        title: "Hey Vibha 👋",
+        text: "Someone wanted you to start this year with a smile 😊"
+      },
+      {
+        title: "Fun fact ✨",
+        text: "Not all lucky charms are objects… some are people." 
+      },
+      {
+        title: "Another fact 😄",
+        text: "Some people make days brighter without even trying." 
+      },
+      {
+        title: "Just saying 💫",
+        text: "Your presence matters more than you think." 
+      },
+      {
+        title: "2025 🤍",
+        text: "May this year bring you calm days, loud laughs, and quiet happiness." 
+      },
+      {
+        title: "Happy New Year Vibha 🎉",
+        text: "You exist beautifully in someone’s story. Always will." 
+      }
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+      index++;
+      if (index < messages.length) {
+        document.getElementById('title').innerText = messages[index].title;
+        document.getElementById('message').innerText = messages[index].text;
+      }
+
+      if (index === messages.length - 1) {
+        document.getElementById('heart').style.display = 'block';
+        document.getElementById('hint').innerText = "✨";
+      }
+    }
+  </script></body>
+</html>
